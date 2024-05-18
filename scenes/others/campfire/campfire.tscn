@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://cpr2s881rg0fd"]
+
+[ext_resource type="Texture2D" uid="uid://c4fdrdp272kep" path="res://art/others/campfire.png" id="1_3f2p7"]
+[ext_resource type="Texture2D" uid="uid://eep8dbj4av8r" path="res://art/light/light_test.png" id="2_memvl"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_in5yq"]
+light_mode = 1
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpe7o"]
+atlas = ExtResource("1_3f2p7")
+region = Rect2(0, 0, 37, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcj8p"]
+atlas = ExtResource("1_3f2p7")
+region = Rect2(37, 0, 37, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bg7g"]
+atlas = ExtResource("1_3f2p7")
+region = Rect2(74, 0, 37, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a6pb"]
+atlas = ExtResource("1_3f2p7")
+region = Rect2(111, 0, 37, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urb5y"]
+atlas = ExtResource("1_3f2p7")
+region = Rect2(148, 0, 37, 62)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p5na"]
+atlas = ExtResource("1_3f2p7")
+region = Rect2(185, 0, 37, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbxii"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpe7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcj8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1bg7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a6pb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urb5y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4p5na")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Campfire" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+show_behind_parent = true
+top_level = true
+material = SubResource("CanvasItemMaterial_in5yq")
+scale = Vector2(0.511504, 0.511504)
+sprite_frames = SubResource("SpriteFrames_hbxii")
+frame_progress = 0.655027
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 12)
+scale = Vector2(3.24, 3.24)
+color = Color(1, 0.333333, 0, 1)
+energy = 0.49
+texture = ExtResource("2_memvl")
